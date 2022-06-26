@@ -5,7 +5,8 @@ max-line-length=120
 disable=
     missing-docstring,
     too-few-public-methods,
-    no-self-use
+    no-self-use,
+    no-member
 good-names=a,b,c,f,i,j,k,v,x,y,z,p,id,getConfig,getLogger,T
 
 [master]
