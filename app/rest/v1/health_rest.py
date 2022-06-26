@@ -5,13 +5,10 @@ from flask_restx import Namespace, Resource, cors
 
 from app import db
 
-health_ns = Namespace(
-    "health",
-    description="health related operations",
-    decorators=[cors.crossdomain(origin="*")],
-)
+health_ns = Namespace("health", description="health related operations", decorators=[cors.crossdomain(origin="*")],)
 
 _log = logging.getLogger(__name__)
+
 
 @health_ns.route("/")
 class HealthCheck(Resource):
@@ -19,7 +16,7 @@ class HealthCheck(Resource):
 
     @health_ns.doc("return a health check")
     def get(self):
-         try:
+        try:
             # to check database we will execute raw query
             db.session.execute("SELECT 1")
             return (
@@ -27,7 +24,7 @@ class HealthCheck(Resource):
                 200,
                 {"content-type": "application/json"},
             )
-         except Exception:
+        except Exception:
             _log.warning({"Status": "Unhealthy", "DB Connection": "Unavailable"})
             return (
                 {"Status": "Unhealthy", "DB Connection": "Unavailable"},
