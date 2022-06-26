@@ -11,5 +11,3 @@ COPY . .
 
 
 CMD [ "env", "FLASK_APP=start.py","python3", "-m" , "flask", "run", "--host=0.0.0.0","--port=5001"]
-
-EXPOSE 5001
