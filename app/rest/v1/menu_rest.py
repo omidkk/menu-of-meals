@@ -16,7 +16,7 @@ _log = logging.getLogger(__name__)
 
 
 @menu_ns.route("/<string:date>/<string:meal_type>")
-class HealthCheck(Resource):
+class Menu(Resource):
     """menu api class"""
 
     @menu_ns.doc("return a menu of day")

@@ -6,7 +6,8 @@ disable=
     missing-docstring,
     too-few-public-methods,
     no-self-use,
-    no-member
+    no-member,
+    useless-option-value
 good-names=a,b,c,f,i,j,k,v,x,y,z,p,id,getConfig,getLogger,T
 
 [master]
