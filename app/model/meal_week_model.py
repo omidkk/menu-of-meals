@@ -18,4 +18,7 @@ class MealWeekModel(db.Model):
         }
 
     def _clone(self):
-        return MealWeekModel(week_id=self.week_id, meal_id=self.meal_id,)
+        return MealWeekModel(
+            week_id=self.week_id,
+            meal_id=self.meal_id,
+        )

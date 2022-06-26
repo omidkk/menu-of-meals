@@ -1,10 +1,11 @@
+from datetime import datetime
+
 from sqlalchemy import and_, func
 
 from app import db
 from app.model.meal_model import MealModel
 from app.model.meal_week_model import MealWeekModel
 from app.model.week_model import WeekModel
-from datetime import datetime
 
 
 class MenuPersistence:

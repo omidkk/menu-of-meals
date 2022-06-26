@@ -20,4 +20,8 @@ class WeekModel(db.Model):
         }
 
     def _clone(self):
-        return WeekModel(id=self.id, start_date=self.start_date, end_date=self.end_date,)
+        return WeekModel(
+            id=self.id,
+            start_date=self.start_date,
+            end_date=self.end_date,
+        )

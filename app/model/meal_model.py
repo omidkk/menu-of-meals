@@ -20,4 +20,8 @@ class MealModel(db.Model):
         }
 
     def _clone(self):
-        return MealModel(id=self.id, name=self.name, type=self.type,)
+        return MealModel(
+            id=self.id,
+            name=self.name,
+            type=self.type,
+        )

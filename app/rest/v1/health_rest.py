@@ -2,10 +2,15 @@
 import logging
 
 from flask_restx import Namespace, Resource, cors
+from sqlalchemy.exc import OperationalError
 
 from app import db
 
-health_ns = Namespace("health", description="health related operations", decorators=[cors.crossdomain(origin="*")],)
+health_ns = Namespace(
+    "health",
+    description="health related operations",
+    decorators=[cors.crossdomain(origin="*")],
+)
 
 _log = logging.getLogger(__name__)
 
@@ -24,7 +29,7 @@ class HealthCheck(Resource):
                 200,
                 {"content-type": "application/json"},
             )
-        except Exception:
+        except OperationalError:
             _log.warning({"Status": "Unhealthy", "DB Connection": "Unavailable"})
             return (
                 {"Status": "Unhealthy", "DB Connection": "Unavailable"},

@@ -10,11 +10,14 @@ load_dotenv()
 class Config:
     """Set Flask configuration from .env file."""
 
+    # pylint: disable=protected-access
+
     # General Config
     FLASK_APP = environ.get("FLASK_APP")
     FLASK_ENV = environ.get("FLASK_ENV")
     logging.basicConfig(
-        filename=environ.get("LOG_FILE"), level=logging._nameToLevel.get(environ.get("LOG_LEVEL")),
+        filename=environ.get("LOG_FILE"),
+        level=logging._nameToLevel.get(environ.get("LOG_LEVEL")),
     )
 
     # Database

@@ -1,5 +1,6 @@
-from app.persistence.menu_persistence import MenuPersistence
 from datetime import datetime
+
+from app.persistence.menu_persistence import MenuPersistence
 
 
 class MenuService:
