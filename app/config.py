@@ -13,9 +13,9 @@ class Config:
     # General Config
     FLASK_APP = environ.get("FLASK_APP")
     FLASK_ENV = environ.get("FLASK_ENV")
-    # logging.basicConfig(
-    #     filename=environ.get("LOG_FILE"), level=logging._nameToLevel.get(environ.get("LOG_LEVEL")),
-    # )
+    logging.basicConfig(
+        filename=environ.get("LOG_FILE"), level=logging._nameToLevel.get(environ.get("LOG_LEVEL")),
+    )
 
     # Database
     SQLALCHEMY_DATABASE_URI = environ.get("SQLALCHEMY_DATABASE_URI")
